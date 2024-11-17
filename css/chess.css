@@ -1,0 +1,277 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.ranks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: -25px;
+  /* Đặt khoảng cách so với bàn cờ */
+  top: 0;
+  height: 100%;
+}
+
+.ranks div {
+  font-size: 12px;
+  color: white;
+  height: 75px;
+  /* Chiều cao của ô vuông */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.files {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -25px;
+  /* Đặt khoảng cách so với bàn cờ */
+  width: 100%;
+}
+
+.files div {
+  font-size: 12px;
+  color: white;
+  width: 75px;
+  /* Chiều rộng của ô vuông */
+  text-align: center;
+}
+
+.squareRow {
+  display: flex;
+}
+
+.square {
+  width: 75px;
+  height: 75px;
+}
+
+.white {
+  background-color: #eeeed2;
+}
+
+.black {
+  background-color: #4b7399;
+}
+
+.highlightYellow {
+  background: #f7f769;
+}
+
+.piece {
+  width: 100%;
+  cursor: pointer;
+}
+
+.captureColor {
+  background-color: #ee4b2b;
+}
+
+.highlight {
+  width: 32px;
+  display: block;
+  height: 32px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.17);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.blur {
+  filter: blur(20px);
+}
+
+.modal p {
+  font-family: sans-serif;
+  font-size: 35px;
+  padding: 4px 8px;
+  background-color: red;
+  color: white;
+}
+
+.modal img {
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  width: 24%;
+}
+
+.modal img:hover {
+  border: 5px solid yellow;
+  cursor: pointer;
+}
+
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #24282d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.player-container {
+  width: fit-content;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.5;
+}
+
+.player i {
+  font-size: 24px;
+}
+
+.player.active {
+  opacity: 1;
+}
+
+.player-top {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.player-bottom {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.exit-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.exit-btn a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 8px 10px;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: #81b64c;
+}
+
+.exit-btn:hover a {
+  background-color: #3f6c37;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.exit-btn a span {
+  margin-right: 8px;
+}
+
+.exit-btn a i {
+  margin-top: 3px;
+  font-size: 20px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-exit {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-exit:hover {
+  background-color: #c9302c;
+}
+
+.btn-cancel {
+  background-color: #5bc0de;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: #31b0d5;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess - Rapid</title>
+    <link rel="stylesheet" href="./css/chess.css" />
+    <script src="https://kit.fontawesome.com/ab243c6e95.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="exit-btn">
+        <a href="#" onclick="showPopup(event)"><span>Thoát</span><i class="fa-solid fa-xmark"></i></a>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="exit-popup">
+        <div class="popup-content">
+            <p>Bạn có chắc chắn muốn thoát?</p>
+            <button class="btn-exit" onclick="confirmExit()">Thoát</button>
+            <button class="btn-cancel" onclick="closePopup()">Hủy</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="players player-top">
+            <span id="player-black" class="player">
+                <i class="fa-regular fa-circle-user"></i> Black Player
+                <div id="black-timer" class="timer">10:00</div>
+            </span>
+
+        </div>
+
+        <div class="board-container">
+            <!-- Ranks (hàng số) -->
+            <div class="ranks">
+                <div>8</div>
+                <div>7</div>
+                <div>6</div>
+                <div>5</div>
+                <div>4</div>
+                <div>3</div>
+                <div>2</div>
+                <div>1</div>
+            </div>
+
+            <!-- Bàn cờ -->
+            <div id="root"></div>
+
+            <!-- Files (cột chữ) -->
+            <div class="files">
+                <div>a</div>
+                <div>b</div>
+                <div>c</div>
+                <div>d</div>
+                <div>e</div>
+                <div>f</div>
+                <div>g</div>
+                <div>h</div>
+            </div>
+        </div>
+
+        <div class="players player-bottom">
+            <span id="player-white" class="player">
+                <i class="fa-regular fa-circle-user"></i> White Player
+                <div id="white-timer" class="timer">10:00</div>
+            </span>
+
+        </div>
+    </div>
+    <script>
+        function showPopup(event) {
+            event.preventDefault();
+            document.getElementById("exit-popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("exit-popup").style.display = "none";
+        }
+
+        function confirmExit() {
+            window.location.href = "index.html";
+        }
+
+    </script>
+</body>
+<script type="module" src="./js/index.js"></script>
+
+
+</html>
