@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess - Tuỳ chỉnh</title>
+    <link rel="stylesheet" href="./css/rapid-option.css">
+    <script src="https://kit.fontawesome.com/ab243c6e95.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="back-btn">
+        <a href="mode.html"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+
+    <div class="container">
+        <h2>Chế độ Rapid</h2>
+
+        <div class="option-group">
+            <label for="timeSelect">Thời gian cho mỗi người chơi:</label>
+            <select id="timeSelect">
+                <option value="10">10 minutes</option>
+                <option value="15">15 minutes</option>
+                <option value="20">20 minutes</option>
+                <option value="25">25 minutes</option>
+                <option value="30">30 minutes</option>
+            </select>
+        </div>
+
+        <div class="option-group">
+            <label for="incrementSelect">Thời gian cộng thêm mỗi lượt:</label>
+            <select id="incrementSelect">
+                <option value="2">2 seconds</option>
+                <option value="5">5 seconds</option>
+                <option value="7">7 seconds</option>
+                <option value="10">10 seconds</option>
+            </select>
+        </div>
+
+        <button onclick="startGame()">Chơi ngay</button>
+    </div>
+</body>
+<script src="./js/rapid-option.js"></script>
+
+</html>
