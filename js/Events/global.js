@@ -135,6 +135,7 @@ function endGame(winner) {
   alert(`${winner === "white" ? "White" : "Black"} wins! Game over.`);
 
   // Reset trạng thái trò chơi
+  window.location.href = "index.html"
 }
 
 function checkKingCaptured() {
